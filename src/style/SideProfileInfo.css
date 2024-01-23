@@ -1,0 +1,13 @@
+.profileUrl {
+    text-decoration: none;
+    color: grey;
+}
+
+.profileUrl:hover {
+    text-decoration: underline;
+    color: rgb(79, 78, 78);
+}
+#ad-dx {
+    font-size: 12px;
+    font-weight: bold;
+}
