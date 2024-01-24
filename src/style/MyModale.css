@@ -1,0 +1,61 @@
+.modalink {
+    text-decoration: none !important;
+    color: black !important;
+}
+.modalink:hover {
+    cursor: pointer;
+    text-decoration: underline blue !important;
+}
+.div-hover-shadow:hover {
+    box-shadow: 0px 5px 5px 0px rgba(190, 190, 190, 0.86) !important;
+}
+.div-pointer:hover {
+    cursor: pointer;
+}
+.div-width {
+    width: 50px !important;
+}
+.modal-dialog-right {
+    margin-right: 0 !important;
+}
+.navicon {
+    line-height: 15px !important;
+    font-size: 0.7em !important;
+}
+.modale {
+    position: fixed !important;
+    top: 24px !important;
+    margin-left: 53px !important;
+
+}
+
+.aziende {
+    font-size: 1.25em;
+}
+.modalp {
+    font-size: 0.8em !important;
+    line-height: 15px !important;
+    margin-top: 5px !important;
+    margin-bottom: 0px !important;
+}
+.modalp2{
+  font-size: 0.8em !important;
+  color: gray !important;
+}
+.modalicon {
+    width: 30px;
+    height: 30px;
+    fill: #0a66c2;
+}
+.modalicon:hover {
+    fill: #0a66c2;
+}
+.modalsize {
+  max-width: 90% !important;
+}
+.lineh {
+  line-height: 5px !important;
+}
+.bodysize {
+    height: 87.3vh !important;
+}

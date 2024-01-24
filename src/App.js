@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import MyNavbar from './components/MyNavbar';
+import Messaggistica from './components/Messaggistica';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/profile/:id' element={<Profile />} />
           </Routes>
         </Container>
+        <Messaggistica />
       </Container>
     </BrowserRouter>
   );

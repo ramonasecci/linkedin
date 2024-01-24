@@ -5,6 +5,10 @@
 .prova {
     position: relative;
 }
+.search-container {
+  position: relative;
+  display: inline-block;
+}
 .search {
     background-color: #edf3f8;
     border: 1px rgba(216, 216, 216, 0.055) solid !important;
@@ -12,6 +16,7 @@
     width: 270px !important;
     font-size: 0.9em;
     border-radius: 5px;
+    padding-left: 40px;
 }
 .search-icon {
     position: absolute;
@@ -33,10 +38,6 @@ ul .nav {
 .nav a:hover {
     color: black;
 }
-
-/* #kitten {
-    width: 35px;
-} */
 
 .nav li {
     font-size: small;
@@ -66,7 +67,7 @@ ul .nav {
 .striscia {
     width: 1px;
     background-color: #cccccc75;
-    height: 125%;
+    height: 100%;
 }
 #dropdown-basic {
     margin: 0;

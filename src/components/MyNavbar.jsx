@@ -1,7 +1,7 @@
 import "../style/NavBar.css";
+import MyModale from "./MyModale";
 import Container from "react-bootstrap/Container";
 import {
-    DropdownToggle,
     DropdownItem,
     DropdownMenu,
     DropdownDivider,
@@ -9,12 +9,11 @@ import {
 import { Dropdown } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, useNavigate } from "react-router-dom";
-import { UseSelector, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const MyNavbar = () => {
     const myInfo = useSelector((state)=> state.meInfo.result)
-    const navigate = useNavigate()
 
     return (
         <Navbar bg="light" variant="light" className="fixed-top border py-0">
@@ -33,11 +32,11 @@ const MyNavbar = () => {
                             <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                         </svg>
                     </Link>
-                    <div className="prova">
+                    <div className="search-container">
                         <BsSearch className="search-icon ms-2" />
                         <input
                             type="text"
-                            placeholder="         Cerca"
+                            placeholder="Cerca"
                             className="search mt-2"
                         />
                     </div>
@@ -168,7 +167,7 @@ const MyNavbar = () => {
                                             <DropdownItem>
                                                 <div className="d-flex align-items-center ">
                                                     <img
-                                                        src={myInfo.image}
+                                                        src="asd"
                                                         alt="proPic"
                                                         className="rounded-circle mx-3"
                                                         width={60}
@@ -184,7 +183,7 @@ const MyNavbar = () => {
                                                                 color: "black",
                                                             }}
                                                         >
-                                                            {myInfo.name} {myInfo.surname}
+                                                            Nome Cognome
                                                         </span>
                                                         <p
                                                             className="text-black mb-0"
@@ -193,35 +192,38 @@ const MyNavbar = () => {
                                                                     "pre-wrap",
                                                             }}
                                                         >
-                                                            {myInfo.role} presso {myInfo.bio}
+                                                            Operaio presso Dario
+                                                            del Giudice
                                                         </p>
                                                     </Link>
                                                 </div>
                                             </DropdownItem>
                                             <DropdownItem className="pt-0">
-                                                <button
-                                                    className="rounded-pill  justify-content-center align-items-baseline  dropbutton"
-                                                    style={{}}
-                                                    onMouseOver={(e) => {
-                                                        e.target.style.backgroundColor =
-                                                            "#0a66c2";
-                                                        e.target.style.color =
-                                                            "white";
-                                                        e.target.style.borderColor =
-                                                            "#0a66c2";
-                                                    }}
-                                                    onMouseOut={(e) => {
-                                                        e.target.style.backgroundColor =
-                                                            "transparent";
-                                                        e.target.style.color =
-                                                            "";
-                                                        e.target.style.borderColor =
-                                                            "#0a66c2";
-                                                    }}
-                                                    onClick={()=> navigate("/profile/me")}
-                                                >
-                                                    Visualizza profilo
-                                                </button>
+                                            <Link to="/profile/me">
+                                                    <button
+                                                        className="rounded-pill  justify-content-center align-items-baseline  dropbutton"
+                                                        style={{}}
+                                                        onMouseOver={(e) => {
+                                                            e.target.style.backgroundColor =
+                                                                "#0a66c2";
+                                                            e.target.style.color =
+                                                                "white";
+                                                            e.target.style.borderColor =
+                                                                "#0a66c2";
+                                                        }}
+                                                        onMouseOut={(e) => {
+                                                            e.target.style.backgroundColor =
+                                                                "transparent";
+                                                            e.target.style.color =
+                                                                "";
+                                                            e.target.style.borderColor =
+                                                                "#0a66c2";
+                                                        }}
+                                                    >
+                                                        Visualizza profilo
+                                                    </button>
+
+                                                </Link>
                                             </DropdownItem>
                                             <DropdownDivider />
                                             <DropdownItem disabled>
@@ -255,38 +257,10 @@ const MyNavbar = () => {
                         </li>
                         <div className="striscia"></div>
                         <li>
-                            <a
-                                href="www"
-                                className="d-flex d-none d-lg-flex flex-column justify-content-center align-items-center"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="22"
-                                    height="22"
-                                    fill="#666666"
-                                    className="bi bi-grid-3x3-gap-fill"
-                                    viewBox="0 0 16 16"
-                                >
-                                    <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z" />
-                                </svg>
-
-                                <p
-                                    className="d-flex m-0 d-none d-lg-flex align-items-center justify-content-center"
+                                <MyModale
+                                    className=" m-0 d-none d-lg-flex align-items-center justify-content-center"
                                     id="aziende"
-                                >
-                                    Per le aziende{" "}
-                                    <svg
-                                        className="bi bi-caret-down-fill ms-1"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="12"
-                                        height="12"
-                                        fill="gray"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                    </svg>
-                                </p>
-                            </a>
+                                />
                         </li>
                         <a href="www" className="me-5">
                             <li id="lastLi" className="d-none d-lg-block me-5">
