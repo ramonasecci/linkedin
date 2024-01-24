@@ -1,15 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Row, Col, Spinner, Alert, Container } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { meInfoAction } from "../redux/actions";
 import ProfileBigCard from "./LeftCol/ProfileBigCard";
-
 import { otherUserAction } from "../redux/actions";
 import SideBarProfiles from "./SidebarProfiles";
 import Experience from "./Experience";
-
-
 
 const Profile = () => {
     const { id } = useParams();
@@ -18,12 +15,9 @@ const Profile = () => {
     const [mioProfilo, setMioProfilo] = useState(null)
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
-    console.log(id)
-
-
+    const myInfo = useSelector((state) => state.meInfo.result)
 
     const apiUrl = `https://striveschool-api.herokuapp.com/api/profile/${id}`;
-
 
     const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2FkOTYwMGJlMTAwMTgzYTg2OTUiLCJpYXQiOjE3MDU5MTcxNDUsImV4cCI6MTcwNzEyNjc0NX0.mVn1na9dJNZSG6UN1Yo40hQT9w8Yg0AUp8jP1aEqOkU';
 
@@ -49,7 +43,7 @@ const Profile = () => {
             setProfile(data)
             setIsError(false)
             setIsLoading(false)
-            if (id === "me") {
+            if (id === myInfo._id) {
                 dispatch(meInfoAction(data))
                 setMioProfilo(true)
             } else {
@@ -72,11 +66,6 @@ const Profile = () => {
                 <div className="text-center mb-2">
                     <Spinner animation="border" variant="info" />
                 </div>
-            )}
-            {isError && (
-                <Alert variant="danger" className="text-center">
-                    Errore nel recupero dei dati
-                </Alert>
             )}
             <Container className="pageContainer">
                 <Row>
