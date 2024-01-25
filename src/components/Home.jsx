@@ -15,12 +15,11 @@ const Home = () => {
     const [isError, setIsError] = useState(false);
     const [counter, setCounter] = useState(0)
 
+    
     const updateCounter = ()=>{
         setCounter(counter+1)
-
     }
     
-
     const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2FkOTYwMGJlMTAwMTgzYTg2OTUiLCJpYXQiOjE3MDU5MTcxNDUsImV4cCI6MTcwNzEyNjc0NX0.mVn1na9dJNZSG6UN1Yo40hQT9w8Yg0AUp8jP1aEqOkU';
 
     const apiUrl = 'https://striveschool-api.herokuapp.com/api/profile/me';
@@ -34,7 +33,7 @@ const Home = () => {
         headers: headers,
     };
 
-    const getExperiences = async () => {
+    const getMyInfo = async () => {
         try {
             const response = await fetch(apiUrl, options);
             if (!response.ok) {
@@ -52,7 +51,7 @@ const Home = () => {
     };
 
     useEffect(() => {
-        getExperiences()
+        getMyInfo()
     }, []);
 
 

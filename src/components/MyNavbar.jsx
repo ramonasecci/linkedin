@@ -11,14 +11,31 @@ import { BsSearch } from "react-icons/bs";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MyNavbar = () => {
-    const myInfo = useSelector((state)=> state.meInfo.result)
+    const myInfo = useSelector((state) => state.meInfo.result)
+    console.log(myInfo)
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        if (searchQuery.trim() !== '') {
+            navigate("/jobsearchresult/" + searchQuery);
+        }
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
 
     return (
         <Navbar bg="light" variant="light" className="fixed-top border py-0">
             <Container className="d-flex pr-0">
-                <div className="d-flex col col-md-4 ">
+                <div className="d-flex col col-md-4 align-items-center">
                     <Link to="/" className="me-2">
                         <svg
                             id="logo"
@@ -33,11 +50,12 @@ const MyNavbar = () => {
                         </svg>
                     </Link>
                     <div className="search-container">
-                        <BsSearch className="search-icon ms-2" />
                         <input
                             type="text"
-                            placeholder="Cerca"
-                            className="search mt-2"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onKeyDown={handleKeyDown}
+                            placeholder="&#128269; Cerca..."
                         />
                     </div>
                 </div>
@@ -83,8 +101,8 @@ const MyNavbar = () => {
                             </a>
                         </li>
                         <li>
-                            <a
-                                href="www"
+                            <Link
+                                to="/job"
                                 className="d-flex flex-column align-items-center"
                             >
                                 <svg
@@ -99,7 +117,7 @@ const MyNavbar = () => {
                                     <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
                                 </svg>
                                 <p className="d-none d-lg-inline m-0">Lavoro</p>
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a
@@ -167,7 +185,7 @@ const MyNavbar = () => {
                                             <DropdownItem>
                                                 <div className="d-flex align-items-center ">
                                                     <img
-                                                        src="asd"
+                                                        src={myInfo.image}
                                                         alt="proPic"
                                                         className="rounded-circle mx-3"
                                                         width={60}
@@ -183,7 +201,7 @@ const MyNavbar = () => {
                                                                 color: "black",
                                                             }}
                                                         >
-                                                            Nome Cognome
+                                                            {myInfo.name} {myInfo.surname}
                                                         </span>
                                                         <p
                                                             className="text-black mb-0"
@@ -192,14 +210,13 @@ const MyNavbar = () => {
                                                                     "pre-wrap",
                                                             }}
                                                         >
-                                                            Operaio presso Dario
-                                                            del Giudice
+                                                            {myInfo.title} presso {myInfo.bio}
                                                         </p>
                                                     </Link>
                                                 </div>
                                             </DropdownItem>
                                             <DropdownItem className="pt-0">
-                                            <Link to="/profile/me">
+                                                <Link to="/profile/me">
                                                     <button
                                                         className="rounded-pill  justify-content-center align-items-baseline  dropbutton"
                                                         style={{}}
@@ -257,10 +274,10 @@ const MyNavbar = () => {
                         </li>
                         <div className="striscia"></div>
                         <li>
-                                <MyModale
-                                    className=" m-0 d-none d-lg-flex align-items-center justify-content-center"
-                                    id="aziende"
-                                />
+                            <MyModale
+                                className=" m-0 d-none d-lg-flex align-items-center justify-content-center"
+                                id="aziende"
+                            />
                         </li>
                         <a href="www" className="me-5">
                             <li id="lastLi" className="d-none d-lg-block me-5">

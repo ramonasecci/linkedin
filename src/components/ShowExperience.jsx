@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { format } from 'date-fns';
 import { Card, Row, Col, Dropdown, Form, Button, Modal } from 'react-bootstrap';
 
-const ShowExperience = ({ profile }) => {
+const ShowExperience = ({ profile, counter, updateCounter }) => {
   const [experiences, setExperiences] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -52,7 +53,7 @@ const ShowExperience = ({ profile }) => {
       }
 
       // Aggiorna la lista delle esperienze dopo la cancellazione
-      getExperiences();
+      updateCounter()
     } catch (error) {
       console.error(error);
     }
@@ -93,7 +94,7 @@ const ShowExperience = ({ profile }) => {
       }
 
       // Aggiorna la lista delle esperienze dopo la modifica
-      getExperiences();
+      updateCounter()
       setShowEditModal(false);
       setEditingExperience(null);
     } catch (error) {
@@ -103,7 +104,7 @@ const ShowExperience = ({ profile }) => {
 
   useEffect(() => {
     getExperiences();
-  }, [profile._id]);
+  }, [profile._id, counter]);
 
   return (
     <>
@@ -117,7 +118,7 @@ const ShowExperience = ({ profile }) => {
                     <p className="fw-bold m-0">{expe.role}</p>
                     <p className="m-0">{expe.company}</p>
                     <small className="text-muted">
-                      {expe.startDate} - {expe.endDate ? expe.endDate : "In corso"}
+                      {format(new Date(expe.startDate), 'dd-MM-yyyy')} - {expe.endDate ? format(new Date(expe.endDate), 'dd-MM-yyyy') : "In corso"}
                     </small>
                     <p>{expe.description}</p>
                   </Card.Body>
@@ -145,7 +146,7 @@ const ShowExperience = ({ profile }) => {
                           className="cursor"
                           onClick={() => editExperience(expe)}>
                           Modifica
-                          </Dropdown.Item>
+                        </Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
                   </div>
@@ -158,7 +159,7 @@ const ShowExperience = ({ profile }) => {
       )}
 
       {/* Modulo di modifica */}
-      
+
       <Modal show={showEditModal} onHide={handleCloseEditModal}>
         <Modal.Header closeButton>
           <Modal.Title>Modifica Esperienza</Modal.Title>

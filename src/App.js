@@ -5,7 +5,10 @@ import { Container } from 'react-bootstrap';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import MyNavbar from './components/MyNavbar';
+import Job from './components/Job';
 import Messaggistica from './components/Messaggistica';
+import JobDetails from './components/JobDetails';
+import JobSearchResults from './components/JobSearchResults';
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/profile/:id' element={<Profile />} />
+            <Route path='/job' element={<Job />} />
+            <Route path='/jobdetails/:id' element={<JobDetails />}/>
+            <Route path='/jobsearchresult/:searchquery' element={<JobSearchResults />} />
           </Routes>
         </Container>
         <Messaggistica />

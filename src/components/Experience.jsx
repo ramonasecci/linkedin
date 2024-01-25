@@ -9,6 +9,7 @@ import ShowExperience from './ShowExperience';
 
 const Experience = ({ profile }) => {
     const [show, setShow] = useState(false);
+    const [counter, setCounter] = useState(0)
     const [experience, setExperience] = useState({
         role: '',
         company: '',
@@ -21,6 +22,10 @@ const Experience = ({ profile }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
     const formDataExperienceImg = new FormData();
+
+    const updateCounter = ()=>{
+        setCounter(counter + 1)
+    }
 
     const handleClose = () => {
         setShow(false);
@@ -70,6 +75,7 @@ const Experience = ({ profile }) => {
                     description: '',
                     area: '',
                 });
+                setCounter(counter +1)
                 setShowAlert(true);
             } else {
                 throw new Error('Errore nel salvataggio dell\'esperienza');
@@ -174,285 +180,11 @@ const Experience = ({ profile }) => {
                     </Modal>
                 </Card.Body>
             </Card>
-            <ShowExperience profile={profile} />
+            <ShowExperience profile={profile} counter={counter} updateCounter={updateCounter}/>
 
         </>
     )
 }
-{/* 
 
-                    {experiences.sort((a, b) => new Date(b.startDate) - new Date(a.startDate)).map((experience, index) => {
-                        let startDate = new Date(experience.startDate);
-                        let startYear = startDate.getFullYear();
-                        let endDate = new Date(experience.endDate);
-                        let endYear = endDate.getFullYear();
-                        return (
-                            
-                        );
-                    })}
-                </Card.Body>
-            </Card>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Change Experience Image</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Form>
-                        <Form.Group controlId="formFile" className="mb-3">
-                            <Form.Label>Choose a pic.</Form.Label>
-                            <Form.Control
-                                type="file"
-                                onChange={(e) => {
-                                    file = e.target.files[0];
-                                    formData.append("experience", file);
-                                }}
-                            />
-                        </Form.Group>
-                    </Form>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button
-                        variant="primary"
-                        onClick={() => {
-                            changeExperiencePic(selectedExperienceId);
-                            handleClose();
-                        }}
-                    >
-                        Save Changes
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-            {experienceModInfo && (
-                <Modal show={modalModifyExperience} onHide={closeExperienceMod}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modifica esperienza</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <Form onSubmit={handleSubmit}>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label className="mb-1">Ruolo ricoperto</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    value={experienceModInfo.role}
-                                    onChange={e => {
-                                        setExperienceModInfo({
-                                            role: e.target.value,
-                                            company: experienceModInfo.company,
-                                            startDate: experienceModInfo.startDate,
-                                            endDate: experienceModInfo.endDate, // could be null
-                                            description: experienceModInfo.description,
-                                            area: experienceModInfo.area,
-                                        })
-                                        //console.log(experienceModInfo.role)
-                                    }}
-
-                                />
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label className="mb-1">Nome azienda</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    value={experienceModInfo.company}
-                                    onChange={e => {
-                                        setExperienceModInfo({
-                                            role: experienceModInfo.role,
-                                            company: e.target.value,
-                                            startDate: experienceModInfo.startDate,
-                                            endDate: experienceModInfo.endDate, // could be null
-                                            description: experienceModInfo.description,
-                                            area: experienceModInfo.area,
-                                        })
-                                    }}
-                                />
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label className="mb-1">Descrizione</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    value={experienceModInfo.description}
-                                    onChange={e => {
-                                        setExperienceModInfo({
-                                            role: experienceModInfo.role,
-                                            company: experienceModInfo.company,
-                                            startDate: experienceModInfo.startDate,
-                                            endDate: experienceModInfo.endDate, // could be null
-                                            description: e.target.value,
-                                            area: experienceModInfo.area,
-                                        })
-                                    }}
-                                />
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label className="mb-1">Località</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    value={experienceModInfo.area}
-                                    onChange={e => {
-                                        setExperienceModInfo({
-                                            role: experienceModInfo.role,
-                                            company: experienceModInfo.company,
-                                            startDate: experienceModInfo.startDate,
-                                            endDate: experienceModInfo.endDate, // could be null
-                                            description: experienceModInfo.description,
-                                            area: e.target.value,
-                                        })
-                                    }}
-                                />
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label className="mb-1">Data di inizio</Form.Label>
-                                <Form.Control
-                                    type="date"
-                                    value={experienceModInfo.startDate.slice(0, 10)}
-                                    onChange={e => {
-                                        setExperienceModInfo({
-                                            role: experienceModInfo.role,
-                                            company: experienceModInfo.company,
-                                            startDate: e.target.value,
-                                            endDate: experienceModInfo.endDate, // could be null
-                                            description: experienceModInfo.description,
-                                            area: experienceModInfo.area,
-                                        })
-                                    }}
-                                />
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label className="mb-1">Data di fine</Form.Label>
-                                <Form.Control
-                                    type="date"
-                                    value={experienceModInfo.endDate ? experienceModInfo.endDate.slice(0, 10) : null}
-                                    onChange={e => {
-                                        setExperienceModInfo({
-                                            role: experienceModInfo.role,
-                                            company: experienceModInfo.company,
-                                            startDate: experienceModInfo.startDate,
-                                            endDate: e.target.value, // could be null
-                                            description: experienceModInfo.description,
-                                            area: experienceModInfo.area,
-                                        })
-                                    }}
-                                />
-                            </Form.Group>
-                            <Form.Group controlId="formFile" className="mb-3">
-                                <Form.Label className="mb-1">Allega un'immagine</Form.Label>
-                                <Form.Control
-                                    type="file"
-                                    onChange={(e) => {
-                                        file = e.target.files[0];
-                                        ModifyFormData.append("experience", file);
-                                    }}
-                                />
-                            </Form.Group>
-                        </Form>
-                    </Modal.Body>
-                    <Modal.Footer className="d-flex justify-content-center">
-                        <Button
-                            variant="primary"
-                            onClick={() => {
-                                fillInputExperience()
-                                closeExperienceMod();
-                                console.log(idExperience)
-                            }}
-                        >
-                            Modifica esperienza
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
-            )}
-
-
-        </>
-            {
-        showAlert === true && (
-            <Alert variant="info">Esperienza salvata</Alert>
-        )
-    }
-            <Button variant="primary" onClick={handleShow}>
-                Aggiungi Esperienza
-            </Button>
-
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Aggiungi Esperienza</Modal.Title>
-                </Modal.Header>
-                <Form onSubmit={handleSubmit}>
-                    <Modal.Body>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Qualifica</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Qualifica"
-                                required
-                                value={experience.role}
-                                onChange={(e) => handleInputChange('role', e.target.value)}
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Azienda</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Azienda"
-                                required
-                                value={experience.company}
-                                onChange={(e) => handleInputChange('company', e.target.value)}
-                            />
-                        </Form.Group>
-                        <div className='d-flex '>
-                            <Form.Group className="mb-3 me-4">
-                                <Form.Label>Data inizio</Form.Label>
-                                <Form.Control
-                                    type="date"
-                                    placeholder="Data inizio"
-                                    required
-                                    value={experience.startDate}
-                                    onChange={(e) => handleInputChange('startDate', e.target.value)}
-                                />
-                            </Form.Group>
-
-                            <Form.Group className="mb-3">
-                                <Form.Label>Data fine</Form.Label>
-                                <Form.Control
-                                    type="date"
-                                    placeholder="Data fine"
-                                    value={experience.endDate}
-                                    onChange={(e) => handleInputChange('endDate', e.target.value || "ancora in corso")}
-                                />
-
-                            </Form.Group>
-                        </div>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Descrizione</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                placeholder="Descrizione"
-                                value={experience.description}
-                                onChange={(e) => handleInputChange('description', e.target.value)}
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Località</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Località"
-                                required
-                                value={experience.area}
-                                onChange={(e) => handleInputChange('area', e.target.value)}
-                            />
-                        </Form.Group>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Chiudi
-                        </Button>
-                        <Button variant="primary" type="submit" onClick={handleClose}>
-                            Aggiungi
-                        </Button>
-                    </Modal.Footer>
-                </Form>
-            </Modal >
-        </> */}
   
 export default Experience;
