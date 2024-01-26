@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import {Card, Col, Container, Form, ListGroup, ListGroupItem, Row,} from "react-bootstrap"
+import { Card, Col, Container, Form, ListGroup, ListGroupItem, Row, } from "react-bootstrap"
 import SingleJob from "./SingleJob"
 
 
@@ -35,7 +35,7 @@ const Job = () => {
             setJobs(data.data)
             setIsError(false);
             console.log(jobs)
-            ;
+                ;
             setIsLoading(false);
         } catch (error) {
             console.error(error);
@@ -48,14 +48,16 @@ const Job = () => {
     }, [])
 
     return (
-        <div style={{ marginTop: '100px' }}>
-            {Array.isArray(jobs) && jobs.length > 0 && (
-                jobs.slice(0, 10).map((job, i) =>
-                (<SingleJob job={job} key={i} />)
-                )
-            )
-            }
-
+        <div style={{ marginTop: '100px' }} className="r-jobs-width">
+                        {Array.isArray(jobs) && jobs.length > 0 && (
+                            jobs.slice(0, 10).map((job, i) =>
+                            (
+                                <SingleJob job={job} key={i} />
+                            )
+                            )
+                        )
+                        }
+    
         </div>
     )
 }

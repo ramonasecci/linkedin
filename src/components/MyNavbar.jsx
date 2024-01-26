@@ -13,23 +13,46 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import { FaFilter } from 'react-icons/fa';
+
 
 const MyNavbar = () => {
     const myInfo = useSelector((state) => state.meInfo.result)
     console.log(myInfo)
     const [searchQuery, setSearchQuery] = useState('');
     const navigate = useNavigate();
+    const [filter, setFilter] = useState('All')
+    const all = `search=${searchQuery}`
+    const company = `company=${searchQuery}`
+    const category = `category=${searchQuery}`
+
 
     const handleSearch = () => {
         if (searchQuery.trim() !== '') {
-            navigate("/jobsearchresult/" + searchQuery);
+            if (filter === "All") {
+                navigate("/jobsearchresult/" + all);
+                setSearchQuery('')
+            } else if (filter === "Company") {
+                navigate("/jobsearchresult/" + company);
+                setSearchQuery('')
+            } else if (filter === "Category") {
+                navigate("/jobsearchresult/" + category);
+                setSearchQuery('')
+            }
         }
     };
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
+
             handleSearch();
         }
+    };
+
+    const handleFilterSelect = (value) => {
+        setFilter(value);
     };
 
     return (
@@ -43,21 +66,34 @@ const MyNavbar = () => {
                             xmlns="http://www.w3.org/2000/svg"
                             width="35"
                             height="35"
-                            fill="currentColor"
+                            fill="#0a66c2"
                             viewBox="0 0 16 16"
                         >
                             <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                         </svg>
                     </Link>
-                    <div className="search-container">
+
+                    <div className="search-container ">
+                        <BsSearch className="search-icon ms-2" />
                         <input
                             type="text"
+                            placeholder="Cerca"
+                            className="search"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             onKeyDown={handleKeyDown}
-                            placeholder="&#128269; Cerca..."
+
                         />
                     </div>
+                    <Dropdown as={ButtonGroup} className="ms-1 btn-blu custom-dropdown">
+                        <Button variant="primary" className="p-0 ps-1 fw-bold">{filter}</Button>
+                        <Dropdown.Toggle split variant="primary" id="dropdown-split-basic" className="p-0" />
+                        <Dropdown.Menu>
+                            <DropdownItem onClick={() => handleFilterSelect('All')} value="">All</DropdownItem>
+                            <DropdownItem onClick={() => handleFilterSelect('Company')} value="">Company</DropdownItem>
+                            <DropdownItem onClick={() => handleFilterSelect('Category')} value="x">Category</DropdownItem>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </div>
                 <div className="d-flex col col-12">
                     <ul

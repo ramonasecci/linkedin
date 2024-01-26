@@ -6,19 +6,16 @@ const JobSearchResults = () =>{
     const [jobs, setJobs] = useState([])
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
-    const {searchquery} = useParams()
-    console.log(searchquery)
+    const {url} = useParams()
+    console.log(url)
 
 
 
     const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlM2FkOTYwMGJlMTAwMTgzYTg2OTUiLCJpYXQiOjE3MDU5MTcxNDUsImV4cCI6MTcwNzEyNjc0NX0.mVn1na9dJNZSG6UN1Yo40hQT9w8Yg0AUp8jP1aEqOkU';
 
-
-
-
     const getJobs = async () => {
         try {
-            const response = await fetch(`https://strive-benchmark.herokuapp.com/api/jobs?search=${searchquery}`, {
+            const response = await fetch(`https://strive-benchmark.herokuapp.com/api/jobs?${url}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -46,7 +43,7 @@ const JobSearchResults = () =>{
 
     useEffect(() => {
         getJobs()
-    }, [])
+    }, [url])
 
     return (
         <div style={{ marginTop: '100px' }}>

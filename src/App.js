@@ -21,7 +21,7 @@ function App() {
             <Route path='/profile/:id' element={<Profile />} />
             <Route path='/job' element={<Job />} />
             <Route path='/jobdetails/:id' element={<JobDetails />}/>
-            <Route path='/jobsearchresult/:searchquery' element={<JobSearchResults />} />
+            <Route path='/jobsearchresult/:url' element={<JobSearchResults />} />
           </Routes>
         </Container>
         <Messaggistica />

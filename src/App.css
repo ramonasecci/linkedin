@@ -384,3 +384,42 @@ svg:hover {
 #card {
   background-color: rgba(0, 0, 0, 0.05);
 }
+
+.text-home-col{
+  font-size: 0.9em;
+} 
+
+.icons-home-s{
+  font-size: 25px;
+}
+
+.bookmark-home-s{
+  font-size: 20px;
+}
+
+.circlelist-home-s{
+  font-size: 25px;
+  margin-right: 50px;
+}
+
+.text-col-icons{
+  padding: 20px 20px !important;
+}
+
+.color-text{
+  color: #5e5e5e;
+}
+
+
+/*footer home*/
+
+.custom-link {
+  color: gray !important; 
+  text-decoration: none !important; 
+}
+
+.custom-link:hover {
+  color: gray !important; 
+  text-decoration: none !important; 
+}
+

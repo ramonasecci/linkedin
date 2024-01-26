@@ -39,7 +39,7 @@ const SingleJob = ({job}) =>{
                                     <BuildingAdd className=" pb-1" />
                                     Apri annuncio
                                 </button>
-                                    <button
+                                    <a
                                         className="btn addJob rounded-pill text-nowrap text-truncate  "
                                         style={{
                                             fontSize: "16px",
@@ -47,10 +47,11 @@ const SingleJob = ({job}) =>{
                                             maxWidth: "143px",
                                             width: "143px",
                                         }}
+                                        href={job.url}
                                     >
                                         <Briefcase className=" pb-1" />
                                         {job.company_name}
-                                    </button>
+                                    </a>
                               
                             </div>
                         </div>
