@@ -1,0 +1,10 @@
+.pointer-cursor:hover{
+    cursor: pointer;
+}
+.margin-x-div:hover{
+    cursor: pointer;
+    background-color: rgba(173, 216, 230, 0.274);
+}
+.piripiri{
+    line-height: 30px;
+}

@@ -2,8 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container } from 'react-bootstrap';
-import Home from './components/Home';
-import Profile from './components/Profile';
+import Home from './components/Home/Home';
+import Profile from './components/Profile/Profile';
 import MyNavbar from './components/MyNavbar';
 import Job from './components/Job';
 import Messaggistica from './components/Messaggistica';

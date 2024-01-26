@@ -1,0 +1,29 @@
+.rc2{
+  text-decoration: none;
+  color:#378FE9;
+  font-weight: 500;
+  font-size: 0.8em;
+}
+.rc2:hover{
+  text-decoration: underline;
+}
+.piurighthome{
+  width: 18px;
+  height: 18px;
+}
+.piudiv{
+  width: 30px;
+  height: 30px;
+  border-radius: 49%;
+}
+.piudiv:hover{
+  background-color: #EBEBEB;
+}
+.scopri{
+  color:#5e5e5e;
+  font-size: 0.9em;
+}
+.scopri:hover{
+    background-color: #EBEBEB;
+    cursor: pointer;
+}

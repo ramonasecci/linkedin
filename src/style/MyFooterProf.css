@@ -1,0 +1,60 @@
+.lif {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.lia,
+.privacy {
+    text-decoration: none;
+    color: #898886;
+    font-size: 0.75em;
+}
+.lia:hover {
+    color: #2c7ac9;
+    text-decoration: underline;
+}
+.privacy:hover {
+    color: #2c7ac9;
+    text-decoration: underline;
+}
+.privacy {
+    font-size: 0.8em;
+}
+.annunci {
+    line-height: 13px;
+    list-style: none;
+}
+.copy {
+    color: #959491;
+    font-size: 0.8em;
+}
+.footericon {
+    width: 22px;
+    height: 22px;
+}
+.h6foot a {
+    text-decoration: none;
+    color: #898886;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.h6foot a:hover {
+    color: #2c7ac9;
+    text-decoration: underline;
+}
+.footerp {
+    font-size: 0.75em;
+    margin-top: 2px;
+    color: #959491;
+}
+.selectlang {
+    width: 260px;
+    height: 30px;
+    padding-left: 5px;
+    font-size: 0.7em;
+    border-radius: 5px;
+    color: #959491;
+}
+.selectlang:hover {
+    box-shadow: 0 0 0 1px black;
+}

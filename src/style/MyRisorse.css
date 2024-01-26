@@ -1,0 +1,39 @@
+.prova {
+    border: solid 1px rgba(0, 0, 0, 0.137);
+    border-radius: 10px;
+}
+.rispan {
+    background-color: #e3e3e3ce;
+    padding-left: 1.4%;
+    padding-right: 1.4%;
+    height: 22px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+.rispan:hover {
+    cursor: pointer;
+}
+.margin-bottom-0 {
+    margin-bottom: 0;
+}
+.box-gray:hover {
+    background-color: lightgray;
+    transition: 0.5s;
+    cursor: pointer !important;
+}
+.text-underline:hover {
+    text-decoration: underline !important;
+    cursor: pointer;
+    color: rgb(0, 119, 255);
+}
+.pointer-hover:hover {
+    cursor: pointer;
+}
+.sateicon {
+    width: 22px;
+    height: 22px;
+    margin-right: 7px;
+}
+.mostra{
+    color: #4d4d4d;
+}

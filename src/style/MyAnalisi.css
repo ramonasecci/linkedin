@@ -1,0 +1,29 @@
+.font-size-small{
+    font-size: 0.9em;
+    line-height: 20px;
+}
+.analisieye{
+    fill: #212529;
+    width: 20px;
+    height: 20px;
+}
+.soloperte{
+    color: #212529;
+    font-size: 0.9em;
+}
+.box-gray:hover{
+    background-color: lightgray;
+    transition: 0.5s;
+    cursor: pointer !important;
+}
+.text-underline:hover{
+    text-decoration: underline !important;
+    cursor: pointer;
+    color: rgb(0, 119, 255);
+}
+.peopleicon{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    fill: #212529;
+}

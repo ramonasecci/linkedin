@@ -1,30 +1,19 @@
-.App {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f3f2ef;
-}
 body {
   background-color: #f4f2ee !important;
-
 }
-.card-footer {
-  text-align: center;
-}
-
 .card-body {
   padding: 2rem 1.5rem !important;
 }
-img, svg, i {
-  cursor:pointer
+img,
+svg,
+i {
+  cursor: pointer;
 }
 .card-title {
   margin-bottom: 1rem !important;
-  font-size: 1.5rem ! important;
+  font-size: 1.5rem !important;
   font-weight: bold !important;
-  ;
 }
-
 .pageContainer {
   padding-top: 7rem;
 }
@@ -34,7 +23,7 @@ img, svg, i {
 }
 /* colonna destra */
 
-@media screen and (min-width:1384px) {
+@media screen and (min-width: 1384px) {
   #messaggistica {
       display: flex;
   }
@@ -43,6 +32,7 @@ img, svg, i {
 #showMore {
   background-color: transparent;
   font-weight: 500;
+  border-radius: 5px;
 }
 #notizie {
   color: #676767;
@@ -53,17 +43,14 @@ img, svg, i {
   display: inline-block;
   width: 6px;
   height: 6px;
-  margin: 0px .6rem 5px 10px
+  margin: 0px 0.6rem 5px 10px;
 }
 #dataNotizie {
   margin-left: 1.8em;
 }
-.listaNotizie h6, .listaNotizie p {
-  font-size: .9em;
-}
-#deviStareStickyTop {
-  position: sticky;
-  top: 5em;
+.listaNotizie h6,
+.listaNotizie p {
+  font-size: 0.9em;
 }
 .listaNotizie {
   text-decoration: none;
@@ -89,13 +76,13 @@ img, svg, i {
   border: none !important;
 }
 
-.cursor{
-  cursor:pointer;
+.cursor {
+  cursor: pointer;
 }
 
-.dotsDivAbsolute{
+.dotsDivAbsolute {
   position: absolute;
-  top: -20px;
+  top: -4px;
   right: 20px;
 }
 
@@ -109,9 +96,8 @@ img, svg, i {
 
 .card-title {
   margin-bottom: 1rem !important;
-  font-size: 1.5rem ! important;
+  font-size: 1.5rem !important;
   font-weight: bold !important;
-  ;
 }
 
 /* sidebar homepage */
@@ -135,14 +121,14 @@ img, svg, i {
 }
 
 .sidebarProfileName {
-  color:black;
+  color: black;
   text-align: center;
   font-size: 14px;
   font-weight: 600;
 }
 
 .sidebarProfileRole {
-  color:grey;
+  color: grey;
   text-align: center;
   font-size: 14px;
   font-weight: 300;
@@ -160,11 +146,10 @@ img, svg, i {
   object-fit: cover;
 }
 
-.sidebarAvatar{
+.sidebarAvatar {
   position: absolute;
   top: 50%;
   left: 50%;
-
 }
 .linkHome {
   font-size: 12px;
@@ -191,199 +176,47 @@ img, svg, i {
   color: black;
 }
 
-.dropdownEdit{
-  position: absolute!important;
+.dropdownEdit {
+  position: absolute !important;
   top: 21px;
   right: 25px;
 }
-.Modifica{
+.Modifica {
   font-size: 1rem;
   color: black;
 }
-.drop::after{
-display: none!important;
+.drop::after {
+  display: none !important;
 }
-
-
 
 /* FINE POST */
 
-
 /* INIZIO CREAZIONE POST COLONNA CENTRALE HOME PAGE */
-.picAndButtonContainer{
+.picAndButtonContainer {
   margin: 0.8rem 1.6rem 0;
 }
 
-.imgPostContainer{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0.4rem 0;
-}
-.imgPostContainer img{
-  width:100%;
-  height:100%;
-}
-.buttonContainer{
+
+.buttonContainer {
   flex-grow: 2;
   height: 50px;
 }
 #iconaFoto:hover {
-  fill: #378FE9;
+  fill: #378fe9;
 }
 svg:hover {
   fill: currentColor;
 }
 
-.buttonCreationPost{
-  display: flex;
-  height:100%;
-  width: 100%;
-  margin: 0.4rem 0;
-  font-size: 1.4rem;
-  max-width: none;
-  justify-content: left;
-  border: 1px solid #A5A5A5;
-  background-color:white;
-  border-radius: 35px!important;
-  padding-left: 1.6rem!important;
-  padding-right: 0.8rem!important;
-  align-items: center;
-  font-size: 1rem
+
+.annuncio {
+width: 100%;
+border-radius: 5px;
+border: 1px solid lightgray;
 }
-
-.PostCreationIconsContainer{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  border: none;
-}
-
-.postButtonContainer{
-  font-size: 1.4rem;
-  padding: 0 1.6rem;
-  padding-left: 0.8rem!important;
-  padding-right: 0.8rem!important;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
-  transition-duration: 167ms;
-  align-items: center;
-  border: none;
-  background-color: transparent;
-}
-.postButtonContainer span{
-  font-size: 1rem;
-}
-
-.artdeco-button__icon{
-  color:#378fe9;
-}
-
-.artdeco-button__text{
-    margin-left: 0.8rem;
-  }
-
-  .videoIcon{
-      color:#5f9b41;
-  }
-
-  .eventIcon{
-      color:#c37d16;
-  }
-  .articleIcon{
-      color:#e16745;
-  }
-  .textPostArea{
-      border: 1px solid transparent!important;
-      padding: 0.375rem 0rem!important;
-  }
-  .buttonPost{
-      background-color: transparent;
-  border-color: transparent;
-  }
-.firstContainerPostIcons{
-  align-items: center;
-  display: flex;
-  padding-right: 0.8rem;
-}
-
-.secondContainerPostIcons{
-  border-left: 1px solid rgba(0,0,0,0.08);
-  padding-left: 0.8rem;
-  margin-right: auto;
-}
-
-.gray{
-  color:gray;
-}
-
-  
 /* FINE CREAZIONE POST COLONNA CENTRALE HOME PAGE */
 
-
-/*Footer home-page*/
-
-.footerQuestion2 {
-  font-size: 0.9em;
-  margin-left: 5px !important;
-}
- 
-.text-footer {
-  font-size: 1.2em;
-  color:#848482 ;
-}
-
-#footerHome {
-  font-size: 0.8em;
-}
-
-.color:hover,
-#basic-nav-dropdown:hover {
-  color: #b624cf!important ;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-
-
-
-/* POST */
-
-.postButton{
-  cursor: pointer;
-}
-
- /* scroll button */
-
-#scroll-to-top-button-container {
-  position: fixed;
-  bottom: 50px;
-  right: 10px;
-  z-index: 999;
-}
-
-#scroll-to-top-button {
-  font-size: 20px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
-
-.addJob:hover {
-  background-color: #0e76a8;
-  color: white;
-  border: 2px solid rgb(255, 255, 255);
-}
-.addJob {
-  border: 2px solid rgb(0, 0, 0);
-}
-#card {
-  background-color: rgba(0, 0, 0, 0.05);
-}
+/*icone colonna sx*/
 
 .text-home-col{
   font-size: 0.9em;
@@ -411,15 +244,4 @@ svg:hover {
 }
 
 
-/*footer home*/
-
-.custom-link {
-  color: gray !important; 
-  text-decoration: none !important; 
-}
-
-.custom-link:hover {
-  color: gray !important; 
-  text-decoration: none !important; 
-}
 

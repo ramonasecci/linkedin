@@ -1,0 +1,28 @@
+.pointer:hover{
+    cursor: pointer;
+}
+.hover-blue:hover{
+    color: #0a66c2;
+    text-decoration: underline #0a66c2;
+}
+.hover-gray:hover{
+    background-color: lightgray;
+}
+.underline-hover:hover{
+    text-decoration: underline #0a66c2;
+}
+.profhome{
+    font-size: 0.9em;
+    line-height: 21px;
+}
+.copertina {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 70px;
+    border-radius: 5px 5px 0 0;
+}
+.marcohome {
+    position: relative;
+}

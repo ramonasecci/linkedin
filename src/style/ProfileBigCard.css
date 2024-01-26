@@ -1,14 +1,18 @@
+.pageContainer {
+    padding-top: 4.8em;
+}
 .profileBigCardCoverContainer {
     min-height: 201px;
     max-height: 201px;
     position: relative;
-
+    border-radius: 50px !important;
 }
 
 .profileBigCardCoverContainer img {
     width: 100%;
-    overflow: hidden;
-    height: 100px;
+    height: 220px !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .profilepicContainer {
@@ -18,34 +22,36 @@
     border-radius: 49.9%;
     border: 4px solid white;
     position: absolute;
-    top: 5%;
-    left: 4%;
+    margin-top: 50px !important;
+    left: 3%;
 }
-
-.profilepichover:hover{
-    filter: grayscale(80%)
+.aggiungifoto {
+    margin-left: 10px !important;
+    font-size: 1.2em;
 }
-
-.pencil-right {
-    position: absolute;
-    right: 28px;
-    top: 170px;
-}
-
 .profileBigCardTextContainer {
-    margin-top: 0.5em;
     line-height: 1.1em;
-    padding: 0 0.8em;
 }
-
+.bigcardname {
+    margin-top: 25px !important;
+}
 .ProfileBigCardContainer {
     border-radius: 0.375rem;
     border: 1px solid rgba(163, 163, 163, 0.526);
     position: relative;
     background-color: white;
-    margin-bottom: 1em
-
-
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+}
+.worklocation {
+    margin-top: 120px;
+    color: #535353;
+    text-decoration: none !important;
+}
+.worklocation:hover {
+    margin-top: 120px;
+    color: #0a66c2;
+    text-decoration: underline !important;
 }
 .profilepic {
     border-radius: 50%;
@@ -67,61 +73,103 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.5s ease;
     border-radius: 50px;
-  }
-  
-  .profilepicContainer:hover .edit-text {
+}
+
+.profilepicContainer:hover .edit-text {
     visibility: visible;
     opacity: 1;
-  }
-
-.ProfileCoverPencil svg {
-    width: 1.4rem;
-    height: 1.4rem;
 }
-
-.ProfileCoverPencil {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    background-color: white;
-    border-radius: 49%;
-}
-#buttonProfileBigCard {
-    padding: 0 1rem;
-    border-radius: 64px;
-    display: flex;
-    align-items: center;
-    height: 2em;
-}
-
 .ProfilePicButtons {
     display: none;
 }
-.carouselCard1 {
-    background-color: #DCE6F1;
-    width: 386px;
-    justify-content: space-between;
-    padding: 0.7em;
-    border-radius: 8px;
-}
-
-.carousel {
+.photodiv {
     display: flex;
-    overflow-x: hidden;
-    padding: 0 2.4rem 2rem 2.4rem;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #ffffff;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }
-
-.btn-profile:hover {
+.photoicon {
+    fill: #0a66c2;
+    margin-right: 2px;
+    margin-bottom: 1px;
+}
+.photoicon:hover {
+    fill: #004182;
+}
+.pencildiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #ffffff;
+    right: 20px;
+    top: 230px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.pencildiv:hover {
     background-color: #ebebeb;
-    border: 2px solid grey;
-    color: grey;
+}
+.pencilicon{
+    fill:none !important;
+    font-size: 1.5em;
 }
 
-.carousel-indicators {
-    display: none !important;
+.disponibile {
+    background-color: #0a66c2;
 }
+.disponibile:hover {
+    background-color: #004182;
+}
+.sezioneprof {
+    color: #0a66c2;
+    border-color: #0a66c2;
+}
+.sezioneprof:hover {
+    background-color: #e2f0fe;
+    color: #0a66c2;
+    box-shadow: inset 0 0 0 1px #0a66c2;
+}
+.usafotocamera {
+    color: #0a66c2;
+    border-color: #0a66c2;
+    background-color: #ffffff!important;
+}
+.usafotocamera:hover {
+    background-color: #e2f0fe !important;
+    color: #0a66c2;
+    box-shadow: inset 0 0 0 1px #0a66c2;
+}
+.fotogrammi {
+    color: #0a66c2;
+    border: none;
+    background-color: #ffffff!important;
+}
+.fotogrammi:hover {
+    background-color: #e2f0fe !important;
+    color: #0a66c2;
 
-@media screen and (min-width:400px) {
+}
+.edificio {
+    width: 50px;
+    height: 50px;
+}
+.altro {
+    color: #3c3c3c;
+}
+.altro:hover {
+    background-color: #ebebeb;
+    color: #3c3c3c;
+    box-shadow: inset 0 0 0 1px #3c3c3c;
+}
+@media screen and (min-width: 400px) {
     .profileBigCardCoverContainer img {
         height: 170px;
     }
@@ -139,7 +187,7 @@
     }
 }
 
-@media screen and (min-width:767px) {
+@media screen and (min-width: 767px) {
     .profileBigCardCoverContainer img {
         height: 130px;
     }
@@ -156,13 +204,13 @@
         margin-top: 0.8em;
     }
 }
-@media screen and (min-width:800px) {
+@media screen and (min-width: 800px) {
     .ProfilePicButtons {
         display: flex;
     }
 }
 
-@media screen and (min-width:993px) {
+@media screen and (min-width: 993px) {
     .profileBigCardCoverContainer img {
         height: 170px;
     }
@@ -179,7 +227,6 @@
         margin-top: 3em;
         padding: 0 1.4em;
     }
-
 }
 
 @media screen and(min-width:1199px) {

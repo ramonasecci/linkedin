@@ -1,0 +1,36 @@
+.divnotizie{
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    border: 1px solid #D2D2D2;
+    color: #191919;
+    padding: 12px !important;
+}
+.linotizie:hover {
+    background-color: #EBEBEB;
+}
+.pnotizie {
+    font-size: 0.80em;
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 15px;
+    margin-bottom: 5px !important;
+}
+.smallnotizie{
+    font-size: 0.81em;
+    margin-bottom: 10px !important;
+    color: #9F9F9F;
+}
+.buttonot{
+    color: #5E5E5E;
+    background-color: #FFFFFF;
+    border: 0px;
+    font-size: 0.8em;
+}
+.buttonot:hover{
+    background-color: #EBEBEB;
+    color:#5E5E5E
+}
+.expand{
+    width: 30px !important;
+    height: 20px;
+}

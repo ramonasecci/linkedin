@@ -112,26 +112,3 @@ ul .nav {
         display: none !important;
     }
 }
-
-.btn-blu{
-    margin-left: 20px!important;
-    height: 28px!important ;
-    min-width: 120px;
-}
-
-
-
-.custom-dropdown .btn-primary {
-    background-color: #0a66c2; 
-    border-color: #0a66c2; 
-}
-
-.custom-dropdown .btn-primary:hover,
-.custom-dropdown .btn-primary:focus {
-    background-color: #004080; 
-    border-color: #004080;
-}
-
-
-
-

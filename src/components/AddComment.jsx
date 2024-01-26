@@ -54,7 +54,7 @@ const AddComment = ({ postId,updateCounter }) => {
             onChange={(e) => setComment({ ...comment, comment: e.target.value })}
           />
         </Form.Group>
-        <Button className="mt-3 text-secondary" type="submit">
+        <Button className="mt-3 btn btn-light" type="submit">
           Aggiungi commento
         </Button>
       </Form>

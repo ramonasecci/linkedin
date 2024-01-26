@@ -1,0 +1,7 @@
+.pencillingua {
+    width: 25px;
+    height: 25px;
+}
+.pencillingua:hover{
+    cursor: pointer;
+}

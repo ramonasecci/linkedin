@@ -1,0 +1,19 @@
+.p-title{
+    margin-top: 18px;
+    font-size: 0.7em;
+    margin-left: 7px;
+    font-weight: 500;
+}
+.pointer-cursor{
+    line-height: 18px;
+    color: #5e5e5e;
+}
+.pointer-cursor:hover{
+    cursor: pointer;
+}
+.suggerimenti:hover{
+    background-color: #ebebeb;
+}
+.underline-blue:hover{
+    text-decoration: underline #0a66c2 !important;
+}

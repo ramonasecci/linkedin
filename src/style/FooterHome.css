@@ -1,0 +1,33 @@
+#footerHome {
+    font-size: 0.8em;
+}
+.afooter {
+    text-decoration: none;
+    color: #898886;
+}
+.afooter:hover {
+    color: #2c7ac9;
+    text-decoration: underline;
+}
+.droprivacy {
+    font-size: 0.75em !important;
+    font-weight: 500;
+    color: #666666;
+}
+.droprivacy:hover {
+    background-color: #ebebeb;
+}
+.drophover {
+    font-size: 0.8em;
+}
+.hdrop {
+    font-size: 1.1em;
+}
+.drophover:hover {
+    text-decoration: underline #2c7ac9;
+}
+.creapagina {
+    margin: auto !important;
+    font-size: 0.9em;
+}
+

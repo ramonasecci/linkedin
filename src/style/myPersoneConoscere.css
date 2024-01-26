@@ -1,0 +1,42 @@
+.margin-bottom-0{
+    margin-bottom: 0;
+}
+.p-hover:hover{
+    cursor: pointer;
+    color: #0a66c2;
+    text-decoration: underline;
+}
+.pointer-cursor:hover{
+    cursor: pointer;
+}
+.div-box-hover:hover{
+    background-color: lightgray;
+    border: solid 1px black !important;
+    cursor: pointer !important;
+}
+.footer-div:hover{
+    background-color: lightgray;
+}
+.hrstrano {
+    height: 1px;
+    background-color: rgb(190, 190, 190);
+    margin-top: 20px;
+    margin-bottom: 5px;
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 15%; 
+
+}
+.marco {
+    width: 50px;
+    height: 50px;
+}
+.collegati {
+    width: 100px;
+    margin-left: 80px;
+}
+.collegati:hover {
+    background-color: #ebebeb;
+    box-shadow: 0 0 0 1px black;
+}
